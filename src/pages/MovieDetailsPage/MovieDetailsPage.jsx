@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { fetchMovieDetails } from '../../services/Api';
 import { lazy, Suspense } from 'react';
 
-const Cast = lazy(() => import('../../components/Cast/Cast'));
-const Reviews = lazy(() => import('../../components/Reviews/Reviews'));
+const Cast = lazy(() => import('../../pages/Cast/Cast'));
+const Reviews = lazy(() => import('../../pages/Reviews/Reviews'));
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
