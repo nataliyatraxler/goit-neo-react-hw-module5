@@ -4,10 +4,10 @@ import Navigation from './pages/Navigation/Navigation';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const MoviesPage = lazy(() => import('./pages/MoviesPage/MoviesPage'));
-const MovieDetailsPage = lazy(() => import('./pages/MovieDetailsPage/MovieDetailsPage'));
+const MovieDetailsPage = lazy(() => import('./components/MovieDetailsPage/MovieDetailsPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
-const Cast = lazy(() => import('./pages/Cast/Cast'));
-const Reviews = lazy(() => import('./pages/Reviews/Reviews'));
+const Cast = lazy(() => import('./components/MovieCast/Cast'));
+const Reviews = lazy(() => import('./components/MovieReviews/Reviews'));
 
 const App = () => {
   return (
