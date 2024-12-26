@@ -1,0 +1,25 @@
+.nav {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #d63384;
+    /* Розовый цвет */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.nav a.active {
+    color: #ad005f;
+    /* Темно-розовый цвет */
+}

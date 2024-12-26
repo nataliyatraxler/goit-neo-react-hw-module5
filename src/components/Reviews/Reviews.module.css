@@ -1,0 +1,22 @@
+.list {
+    padding: 20px;
+    list-style: none;
+}
+
+.item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.author {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.content {
+    font-style: italic;
+    color: #555;
+}
