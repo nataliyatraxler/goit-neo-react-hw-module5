@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { fetchMoviesByQuery } from '../../services/Api'; // Переконайтеся, що шлях правильний
-import MovieList from '../../pages/MovieList/MovieList'; // Список фільмів
+import MovieList from '../../MovieList/MovieList'; // Список фільмів
 
 const MoviesPage = () => {
   const [query, setQuery] = useState(''); // Для зберігання запиту
