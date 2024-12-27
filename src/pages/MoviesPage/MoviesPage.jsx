@@ -1,46 +1,42 @@
-import { useState } from 'react';
-import { fetchMoviesByQuery } from '../../services/Api'; // Переконайтеся, що шлях правильний
-import MovieList from '../../MovieList/MovieList'; // Список фільмів
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { fetchMoviesByQuery } from '../../services/Api';
+import MovieList from '../../MovieList/MovieList';
 
 const MoviesPage = () => {
-  const [query, setQuery] = useState(''); // Для зберігання запиту
-  const [movies, setMovies] = useState([]); // Для зберігання результатів пошуку
-  const [error, setError] = useState(null); // Для обробки помилок
+  const [movies, setMovies] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get('query') || '';
 
-  const handleSearch = async (e) => {
-    e.preventDefault(); // Забороняємо перезавантаження сторінки
-    if (!query.trim()) {
-      alert('Please enter a valid movie name!');
-      return;
-    }
-    try {
-      setError(null); // Скидаємо попередні помилки
-      const data = await fetchMoviesByQuery(query); // Виконуємо запит
-      if (data.length === 0) {
-        alert('No movies found for this query.'); // Повідомлення, якщо немає результатів
+  useEffect(() => {
+    if (!query) return;
+
+    const getMovies = async () => {
+      try {
+        const data = await fetchMoviesByQuery(query);
+        setMovies(data);
+      } catch (error) {
+        console.error('Не вдалося завантажити фільми:', error);
       }
-      setMovies(data); // Зберігаємо отримані фільми
-    } catch (err) {
-      console.error('Failed to fetch movies:', err);
-      setError('Failed to fetch movies. Please try again later.');
-    }
+    };
+
+    getMovies();
+  }, [query]);
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const input = form.elements.query.value.trim();
+    setSearchParams(input ? { query: input } : {});
   };
 
   return (
     <div>
-      <h1>Search Movies</h1>
       <form onSubmit={handleSearch}>
-        <input
-          type="text"
-          placeholder="Enter movie name"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <button type="submit">Search</button>
+        <input type="text" name="query" defaultValue={query} placeholder="Пошук фільмів..." />
+        <button type="submit">Шукати</button>
       </form>
-
-      {error && <p style={{ color: 'red' }}>{error}</p>} {/* Виводимо помилку */}
-      {movies.length > 0 && <MovieList movies={movies} />} {/* Виводимо список фільмів */}
+      <MovieList movies={movies} />
     </div>
   );
 };

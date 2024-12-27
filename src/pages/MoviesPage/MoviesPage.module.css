@@ -1,19 +1,55 @@
-.searchBar {
+.movieDetails {
+    padding: 20px;
+}
+
+.goBackButton {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.goBackButton:hover {
+    background-color: #e63939;
+}
+
+.movieInfo {
     display: flex;
-    justify-content: center;
+    gap: 20px;
     margin-bottom: 20px;
 }
 
-.searchInput {
+.movieDetailsPoster {
     width: 300px;
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
-.moviesList {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+.movieNav {
+    display: flex;
     gap: 20px;
+}
+
+.navLink {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 16px;
+}
+
+.navLink:hover {
+    text-decoration: underline;
+}
+
+.movieTitle {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.movieOverview {
+    font-size: 16px;
+    color: #555;
 }

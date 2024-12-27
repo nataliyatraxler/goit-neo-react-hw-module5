@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Ваш API-ключ із TMDB
-const API_KEY = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMTlhZWFhZGIwZjlkYjQ1YjYwYjI4YTA5NGZmNmI0MiIsIm5iZiI6MTczNDU2NDcyOC42NjYsInN1YiI6IjY3NjM1Yjc4NjM4NTM2NTliZDRhNDBlMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ncu6MWMOkskCo4Ap1Gunu15lhBZBMzwUkiBcNJ9dg0g';
+const API_KEY = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzNjMyZGMwOTliZDczM2Q3ZDg3NWQ5ZWRiZTcwN2RmNiIsIm5iZiI6MTczNDU2NDcyOC42NjYsInN1YiI6IjY3NjM1Yjc4NjM4NTM2NTliZDRhNDBlMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9tmU3lnnkdRDmhYEfo8YkyhUNzc4P60LUsObIWI4rT4';
 
 // Базова URL-адреса API
 const BASE_URL = 'https://api.themoviedb.org/3';
